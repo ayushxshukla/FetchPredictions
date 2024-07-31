@@ -5,7 +5,9 @@ const ListComponent = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3002/api/list");
+      const response = await fetch(
+        "https://fetchpredictions.onrender.com/api/list"
+      );
       const data = await response.json();
       setFormDataList(data.reverse());
     };

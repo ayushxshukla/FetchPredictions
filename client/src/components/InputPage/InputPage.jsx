@@ -10,7 +10,9 @@ const InputPage = () => {
     // Retrieve the link from backend and set it as placeholder
     const fetchLink = async () => {
       try {
-        const response = await fetch("http://localhost:3002/api/settings");
+        const response = await fetch(
+          "https://fetchpredictions.onrender.com/api/settings"
+        );
         if (!response.ok) throw new Error("Failed to fetch redirect link");
         const data = await response.json();
         setPlaceholder(data.redirectLink || "");
@@ -38,13 +40,16 @@ const InputPage = () => {
         : `http://${link}`;
 
     try {
-      const response = await fetch("http://localhost:3002/api/settings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ redirectLink: fullLink }),
-      });
+      const response = await fetch(
+        "https://fetchpredictions.onrender.com/api/settings",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ redirectLink: fullLink }),
+        }
+      );
 
       if (!response.ok) throw new Error("Failed to update redirect link");
 

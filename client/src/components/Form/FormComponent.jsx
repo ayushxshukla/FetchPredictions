@@ -29,7 +29,7 @@ const FormComponent = () => {
 
     try {
       // const baseUrl = `${window.location.origin}/api`;
-      const baseUrl = `http://localhost:3002/api`;
+      const baseUrl = `https://fetchpredictions.onrender.com/api`;
       const response = await fetch(`${baseUrl}/submit`, {
         method: "POST",
         headers: {
@@ -41,7 +41,7 @@ const FormComponent = () => {
       if (!response.ok) throw new Error("Failed to submit data");
 
       const settingsResponse = await fetch(
-        "http://localhost:3002/api/settings"
+        "https://fetchpredictions.onrender.com/api/settings"
       );
       if (!settingsResponse.ok)
         throw new Error("Failed to fetch redirect link");
