@@ -56,7 +56,7 @@ const FormComponent = () => {
 
   return (
     <div className="form-wrapper">
-      <h1>Form</h1>
+      <h1>Survey form for Voting</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
